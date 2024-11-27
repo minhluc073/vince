@@ -1,0 +1,131 @@
+
+
+// image select
+@import url(./bootstrap-select.min.css);
+
+.image-select {
+    &.style-default {
+        width: unset !important;
+        display: flex;
+        > select {
+            display: none !important;
+        }
+        > .dropdown-toggle {
+            padding: 0;
+            background-color: transparent !important;
+            border: 0 !important;
+            outline: none !important;
+            color: var(--dark);
+            &::after {
+                display: none
+            }
+        }
+        .filter-option-inner-inner {
+            @include flex(center,start);
+            gap: 6px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            color: var(--dark);
+            img {
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+            }
+        }
+        > .dropdown-menu {
+            overflow: unset !important;
+            margin-top: 17px !important;
+            margin-bottom: 17px !important;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 0;
+            background-color: var(--white);
+            box-shadow: var(--shadow-1);
+            a {
+                padding: 5px 0;
+                .text {
+                    @include flex(center,start);
+                    gap: 6px;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 16px;
+                    img {
+                        width: 14px;
+                        height: 14px;
+                        border-radius: 50%;
+                    }
+                }
+                &:hover,
+                &:active,
+                &.active {
+                    color: var(--primary) ;
+                    background-color: unset;
+                }
+            }
+            &::after {
+                position: absolute;
+                content: '';
+                width: 12px;
+                height: 12px;
+                transform: translate(-50%,-50%) rotate(45deg);
+                background-color: var(--white);
+                top: 0;
+                left: 50%;
+                z-index: 2;
+            }
+            &[data-popper-placement="top-start"] {
+                &::after {
+                    display: none;
+                }
+                &::before {
+                    position: absolute;
+                    content: '';
+                    width: 12px;
+                    height: 12px;
+                    transform: translate(-50%,50%) rotate(45deg);
+                    background-color: var(--white);
+                    bottom: 00%;
+                    left: 50%;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+    &.type-currencies {
+        > .dropdown-menu {
+            width: 200px !important;
+        }
+    }
+    &.type-languages {
+        > .dropdown-menu {
+            width: 100px !important;
+        }
+    }
+    &.color-secondary-2 {
+        > .dropdown-toggle {
+            color: var(--secondary-2);
+            &::after {
+                color: var(--secondary-2);
+            }
+            .filter-option {
+                .filter-option-inner {
+                    color: var(--secondary-2);
+                }
+            }
+        }
+    }
+    &.color-white {
+        > .dropdown-toggle {
+            color: var(--white);
+            &::after {
+                color: var(--white);
+            }
+            .filter-option {
+                .filter-option-inner {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+}

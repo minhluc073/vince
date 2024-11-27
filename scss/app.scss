@@ -1,0 +1,52 @@
+/* ---------------------------------------------------------
+    * Name: Modave - Multipurpose eCommerce
+    * Version: 1.0.1
+    * Author: Themesflat
+    * Author URI: http://themesflat.com 
+
+	* Abstracts variable
+    
+    * Reset css styles
+
+    * Components
+
+        * header
+        * footer
+        * tabs
+        * slider
+        * button
+        * form
+        * nice-select
+        * carousel
+        * avatar
+        * pop-up
+        * box-icon
+        * hover
+        * collection
+        * product
+        * blog
+        * testimonial
+        * lookbook
+        * accordion
+        * zoom
+        * shop
+        
+    * section
+
+    * Responsive
+ ------------------------------------------------------------------------------ */
+
+/*--------- Abstracts variable ---------- */
+@import "./abstracts/index";
+
+/*---------- Reset css styles ----------- */
+@import "reset";
+
+/*------------ Components ---------------- */
+@import "./component/index";
+
+/*------------ sections ---------------- */
+@import "./sections";
+
+/*-------------- Responsive ----------------- */
+@import "./responsive";

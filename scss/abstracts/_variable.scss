@@ -1,0 +1,30 @@
+//settings
+$font-main: "Poppins", sans-serif;
+$font-2: "Albert Sans", sans-serif;
+$font-3: "Playfair Display", serif;
+$font-4: "DM Sans", sans-serif;
+$fontIcon: "icomoon";
+
+:root{  
+    // color
+    --primary: #FF6F61;
+    --primary-2: #FF9A90;
+    --primary-3: #FFC5C0;
+    --primary-4: #FFF1EF;
+    --secondary: #4B4DED;
+    --secondary-2: rgba(75, 77, 237, 0.75);
+    --secondary-3: rgba(75, 77, 237, 0.5);
+    --secondary-4: #EFEFFD;
+    --dark:#000000;
+    --white: #FFFFFF;
+    --white-2: #EDEAE5;
+    --success:#31D0AA;
+    --success-2: rgba(49, 208, 170, 0.75);
+    --success-3: rgba(49, 208, 170, 0.5);
+    --success-4: rgba(49, 208, 170, 0.1);
+    --text:#545454;
+    --line: #EBEBEB;
+    --surface: #F5F5F5;
+    --shadow-1: 0px 4px 20px 0px #0000001A;
+}
+

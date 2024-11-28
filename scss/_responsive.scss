@@ -71,7 +71,14 @@
             grid-template-columns: repeat(7, 1fr);
         }
     }
-    
+    .marquee-topbar{
+        .marquee-wrapper{
+            animation: infiniteScroll 30s linear infinite;
+            .marquee-child-item{
+                margin: 0 20px;
+            }
+        }
+    }
 }
 @media (min-width: 1025px) {
     
@@ -96,6 +103,17 @@
         }
         &.xl-col-7 {
             grid-template-columns: repeat(7, 1fr);
+        }
+    }
+    .header-default{
+        .wrapper-header {
+            min-height: 87px;
+            .nav-icon {
+                gap: 20px;    
+            }
+        }
+        .box-nav-ul{
+            gap: 40px;
         }
     }
    

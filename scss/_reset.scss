@@ -124,7 +124,6 @@ body {
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
-    color: var(--dark);
     background-color: var(--white);
     font-style: normal;
     color: var(--text);
@@ -221,12 +220,12 @@ input[type="color"] {
     padding: 9px 16px;
     width: 100%;
     background: var(--white);
-    color: var(--main);
+    color: var(--dark);
     font-weight: 400;
     @include transition3;
     &:hover,
     &:focus {
-        border-color: var(--main);
+        border-color: var(--dark);
     }
 }
 
@@ -269,7 +268,7 @@ textarea {
 
 button{
     @include transition3;
-    background-color: var(--main);
+    background-color: var(--dark);
     color: var(--white);
     padding: 15px 32px;
     border-radius: 99px;
@@ -284,7 +283,7 @@ button{
     }
     &:hover{
         background-color: transparent;
-        color: var(--main);
+        color: var(--dark);
     } 
 }
 
@@ -493,9 +492,9 @@ video {
 .bg-dark-2{
     background-color: #313030 !important;
 }
-.bg-main{
-    background-color: var(--main)!important;
-} 
+// .bg-main{
+//     background-color: var(--dark)!important;
+// } 
 .bg-white{
     background-color: var(--white) !important;
 }
@@ -505,7 +504,9 @@ video {
 .bg-line{
     background-color: var(--line) !important;
 }
-
+.bg-light-pink{
+    background-color: #FF6969 !important;
+}
 
 .bg-light-green{
     background-color: #7C8C47 !important;
@@ -513,7 +514,6 @@ video {
 .bg-green{
     background-color: #3F7B25 !important;
 }
-
 .bg-light-purple{
     background-color: #8F4A58 !important;
 }
@@ -526,6 +526,9 @@ video {
 .bg-light-blue{
     background-color: #5192F4 !important;
 }
+.bg-brown{
+    background-color: #7E6449 !important;
+}
 
 
 
@@ -535,7 +538,7 @@ a {
     text-decoration: none;
     cursor: pointer;
     display: inline-block;
-    color: var(--main);
+    color: var(--dark);
     &:focus,
     &:hover {
         @include transition3;
@@ -577,7 +580,7 @@ a {
     border-top: 1px solid var(--line);
 }
 .line-black {
-    border: 1px solid var(--main);
+    border: 1px solid var(--dark);
 }
 
 
@@ -797,7 +800,7 @@ a {
     cursor: pointer;
     overflow: hidden;
     z-index: 100;
-    background-color: var(--main);
+    background-color: var(--dark);
     border: 0;
     bottom: 92px;
     right: 20px;

@@ -112,7 +112,7 @@
                 gap: 20px;    
             }
         }
-        .box-nav-ul{
+        .box-nav-menu{
             gap: 40px;
         }
     }
@@ -141,6 +141,31 @@
             grid-template-columns: repeat(7, 1fr);
         }
     }
+
+    .box-nav-menu{
+        .mega-menu{
+            left: 100px;
+            right: 100px;
+            padding: 32px 104px 60px;
+        }
+        .mega-shop{
+            left: 76px;
+            right: 80px;
+            padding: 32px 123px 60px;
+        }
+        .mega-tab{
+            .wrapper-sub-menu-tab{
+                .tab-pane{
+                    gap: 60px;
+                }
+            }
+            .wrapper-sub-product{
+                padding: 32px 104px 100px;
+                padding-left: 0;
+                
+            }
+        }
+    }
     
 }
 @media (min-width: 1600px) {
@@ -148,19 +173,30 @@
 }
 
 // max-width:
-@media only screen and (max-width: 1440px) {
+@media (max-width: 1440px) {
+    .box-nav-menu{
+        .sub-menu-style-2{
+            left: -100px;
+        }
+    }
+}
+
+@media (max-width: 1399px) {
     
 }
 
-@media only screen and (max-width: 1399px) {
+@media (max-width: 1199px) {
+    .logo-header {
+        display: flex;
+        justify-content: center;
+    }
+    .header-default .wrapper-header .nav-icon {
+        gap: 10px;
+    }
     
 }
 
-@media only screen and (max-width: 1199px) {
-    
-}
-
-@media only screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
 
     h1,.display-2xl{
         font-size: 52px;
@@ -191,11 +227,11 @@
 
 }
 
-@media only screen and (max-width: 991px) {
+@media (max-width: 991px) {
     
 }
 
-@media only screen and (max-width: 767px) {
+@media (max-width: 767px) {
     
     h1,.display-2xl{
         font-size: 42px;
@@ -223,6 +259,15 @@
         line-height: 28px;
     }
     
+    #header {
+        .nav-icon {
+            .nav-account,
+            .nav-wishlist,
+            .nav-compare {
+                display: none;
+            }
+        }
+    }
 
     .footer {
         .footer-heading-mobile {
@@ -278,7 +323,7 @@
     
 }
 
-@media only screen and (max-width: 575px) {
+@media (max-width: 575px) {
     
     
 

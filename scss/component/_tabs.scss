@@ -1,0 +1,37 @@
+
+
+.flat-animate-tab {
+    overflow: hidden;
+    .tab-content {
+        position: relative;
+    }
+    .tab-pane {
+        display: block;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        -webkit-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        transform: translateY(30px);
+        transition-timing-function: ease-in;
+        transition-duration: 0.2s;
+        &.active {
+            pointer-events: auto;
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+            z-index: 2;
+            -webkit-transform: none;
+            -ms-transform: none;
+            transform: none;
+            transition-timing-function: ease-out;
+            transition-duration: 0.3s;
+            transition-delay: 0.3s;
+        }
+    }
+}

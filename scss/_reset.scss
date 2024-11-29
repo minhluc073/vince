@@ -358,6 +358,10 @@ h6,.display-xs{
     font-size: 12px;
     line-height: 18px;
 }
+.text-xxs{
+    font-size: 10px;
+    line-height: 14px;
+}
 .text-caption{
     font-size: 12px;
     line-height: 15.72px;
@@ -397,22 +401,7 @@ video {
 }
 
 
-// font-weight
-.fw-4 {
-    font-weight: 400 !important;
-}
-.fw-5 {
-    font-weight: 500 !important;
-}
-.fw-6 {
-    font-weight: 600 !important;
-}
-.fw-7 {
-    font-weight: 700 !important;
-}
-.fw-8 {
-    font-weight: 800 !important;
-}
+
 
 // color
 .text-primary {
@@ -461,6 +450,10 @@ video {
     color: var(--text) !important;
 }
 
+.text-grey{
+    color: #ACACAC !important;
+}
+
 // background color 
 .bg-primary{
     background-color: var(--primary)!important;
@@ -492,9 +485,9 @@ video {
 .bg-dark-2{
     background-color: #313030 !important;
 }
-// .bg-main{
-//     background-color: var(--dark)!important;
-// } 
+.bg-grey{
+    background-color: #ACACAC !important;
+} 
 .bg-white{
     background-color: var(--white) !important;
 }

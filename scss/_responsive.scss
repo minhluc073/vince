@@ -112,8 +112,8 @@
                 gap: 20px;    
             }
         }
-        .box-nav-menu{
-            gap: 40px;
+        .header-top{
+            border-bottom: 1px solid var(--line);
         }
     }
    
@@ -141,7 +141,16 @@
             grid-template-columns: repeat(7, 1fr);
         }
     }
-
+    .header-default{
+        .box-nav-menu{
+            gap: 40px;
+            .item-link{
+                &::after{
+                    width: calc(100% + 80px);
+                }
+            }
+        }
+    }
     .box-nav-menu{
         .mega-menu{
             left: 100px;

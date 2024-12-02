@@ -16,6 +16,7 @@ $fontIcon: "icomoon";
     --secondary-3: rgba(75, 77, 237, 0.5);
     --secondary-4: #EFEFFD;
     --dark:#000000;
+    --dark-2: #101828;
     --white: #FFFFFF;
     --white-2: #EDEAE5;
     --success:#31D0AA;
@@ -23,7 +24,11 @@ $fontIcon: "icomoon";
     --success-3: rgba(49, 208, 170, 0.5);
     --success-4: rgba(49, 208, 170, 0.1);
     --text:#545454;
+    --text-2: #393939;
+    --text-3: #667085;
     --line: #EBEBEB;
+    --line-2: #F2F4F7;
+
     --surface: #F5F5F5;
     --shadow-1: 0px 4px 20px 0px #0000001A;
 
@@ -32,3 +37,6 @@ $fontIcon: "icomoon";
     --backdrop: rgba(0, 0, 0, 0.4);
 }
 
+.primary-2{
+    --primary: #39AE52; 
+}

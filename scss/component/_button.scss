@@ -2,12 +2,21 @@
 
 
 
+.btn-fill{
+  background-color: var(--dark);
+  color: var(--white);
+  &:hover{
+    background-color: var(--primary);
+    color: var(--white);
+  }
+}
+
 .animate-btn {
     position: relative;
     overflow: hidden;
     &:hover{
         &::after{
-            animation: shine-forward 1s forwards;
+            animation: shine-forward .5s forwards;
         }
     }
 }
@@ -25,7 +34,7 @@
     top: 0;
     left: -100%;
     opacity: 0.6;
-    animation: shine-reverse 1s forwards;
+    animation: shine-reverse .5s forwards;
 
 }
 .animate-btn.btn-fill::after {

@@ -28,13 +28,19 @@ $fontIcon: "icomoon";
     --text-3: #667085;
     --line: #EBEBEB;
     --line-2: #F2F4F7;
+    --line-3: #C9C9C9;
 
     --surface: #F5F5F5;
+    --surface-2: #F7F7F7;
     --shadow-1: 0px 4px 20px 0px #0000001A;
 
     --gradient-1: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
 
     --backdrop: rgba(0, 0, 0, 0.4);
+
+    // rgba color
+    --rgba-dark: rgb(0, 0, 0, 0.6);
+
 }
 
 .primary-2{

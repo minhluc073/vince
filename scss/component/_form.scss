@@ -34,4 +34,97 @@
             color: var(--white);
         }
     }
+    
+
+}
+.tf-form-search{
+    position: relative;
+    .search-suggests-results{
+        border-radius: 10px;
+        position: absolute;
+        top: calc(100% + 5px);
+        right: 0;
+        left: 0;
+        z-index: 1000;
+        height: auto;
+        background-color: var(--white);
+        opacity: 0;
+        visibility: hidden;
+        transition: all .1s ease-in-out;
+        max-width: 100%;
+        box-shadow: var(--shadow-1);
+        pointer-events: none;
+        .search-suggests-results-inner{
+            overflow: auto;
+            overflow-x: hidden;
+            padding: 20px;
+            max-height: calc(95vh - 183px);
+            &::-webkit-scrollbar {
+                width: 5px;
+                border-radius: 5px;
+                
+            }
+            &::-webkit-scrollbar-track {
+                background-color: var(--line);
+            }
+            &::-webkit-scrollbar-thumb {
+                background: var(--line-3);
+                border-radius: 10px;
+            }
+        }
+    }
+    &:hover{
+        .search-suggests-results{
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+        }
+    }
+    .search-suggests-results-inner{
+        .search-result-item{
+            display: flex;
+            gap: 15px;
+            .box-content{
+                flex-grow: 1;
+                .title{
+                    color: var(--dark);
+                    text-align: left;
+                }
+                .price{
+                    color: var(--dark);
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 22px;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+                .old-price{
+                    text-decoration: line-through;
+                    color: var(--rgba-dark);  
+                }
+                .new-price{
+                    color: var(--primary);
+                }
+            }
+            .img-box{
+                width: 60px;
+                height: 84px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        li{
+            &:not(:last-child){
+                .search-result-item{
+                    padding-bottom: 10px;
+                    margin-bottom: 10px;
+                    border-bottom: solid 1px var(--line);
+                }
+            }
+        }
+    }
 }

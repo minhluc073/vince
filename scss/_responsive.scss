@@ -282,6 +282,10 @@
 }
 
 @media (max-width: 991px) {
+    .flat-spacing{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
     
 }
 
@@ -373,6 +377,11 @@
                 width: 100%;
             }
         }
+    }
+
+    .flat-spacing{
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
     
 }

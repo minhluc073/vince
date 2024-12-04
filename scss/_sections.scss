@@ -1,0 +1,43 @@
+
+// breadcrumbs
+
+.tf-breadcrumb{
+    margin-top: 32px;
+    &.space-2{
+        margin-top: 24px;
+    }
+    .breadcrumb-list{
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        .item-breadcrumb{
+            position: relative;
+            &:not(:last-child){
+                .text{
+                    color: var(--text-4);
+                }
+            }
+            .text{
+               font-size: 14px;
+               line-height: 16.8px;
+               font-weight: 400; 
+               color: var(--dark);    
+            }
+        }
+        .dot{
+            width: 16px;
+            height: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            span{
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: var(--text-4);
+                display: inline-block;
+            }
+        }
+    }
+}

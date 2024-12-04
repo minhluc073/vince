@@ -511,6 +511,9 @@ video {
 .bg-green{
     background-color: #3F7B25 !important;
 }
+.bg-purple{
+    background-color: var(--purple) !important;
+}
 .bg-light-purple{
     background-color: #8F4A58 !important;
 }
@@ -866,3 +869,12 @@ a {
       transform: rotate(360deg);
     }
 }
+
+// spacing
+
+.flat-spacing{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+

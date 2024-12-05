@@ -4,9 +4,10 @@ import PhotoSwipe from './photoswipe.esm.min.js';
 
 if ($(".thumbs-slider").length > 0) {
     var direction = $(".tf-product-media-thumbs").data("direction");
+    var preview = $(".tf-product-media-thumbs").data("preview");
     var thumbs = new Swiper(".tf-product-media-thumbs", {
       spaceBetween: 10,
-      slidesPerView: "auto",
+      slidesPerView: preview,
       freeMode: true,
       direction: "vertical",
       watchSlidesProgress: true,
@@ -15,20 +16,20 @@ if ($(".thumbs-slider").length > 0) {
       breakpoints: {
         0: {
           direction: "horizontal",
+          slidesPerView: preview,
         },
         1200: {
           direction: "vertical",
           direction: direction,
         },
       },
-      450: {
-        direction: "vertical",
-      },
+
     });
     var main = new Swiper(".tf-product-media-main", {
       spaceBetween: 0,
       observer: true,
       observeParents: true,
+      speed: 800,
       navigation: {
         nextEl: ".thumbs-next",
         prevEl: ".thumbs-prev",
@@ -126,20 +127,22 @@ if ($(".thumbs-slider").length > 0) {
     }
 
     var image_zoom = function () {
-        var driftAll = document.querySelectorAll('.tf-image-zoom');
-        var pane = document.querySelector('.tf-zoom-main');
-        $(driftAll).each(function(i, el) {
-            new Drift(
-                el, {
-                zoomFactor: 2,
-                paneContainer: pane,
-                inlinePane: false,
-                handleTouch: false,
-                hoverBoundingBox: true,
-                containInline: true,
-                }
-            );
-        });
+        if (matchMedia("only screen and (min-width: 768px)").matches) {
+            var driftAll = document.querySelectorAll('.tf-image-zoom');
+            var pane = document.querySelector('.tf-zoom-main');
+            $(driftAll).each(function(i, el) {
+                new Drift(
+                    el, {
+                    zoomFactor: 2,
+                    paneContainer: pane,
+                    inlinePane: false,
+                    handleTouch: false,
+                    hoverBoundingBox: true,
+                    containInline: true,
+                    }
+                );
+            });
+        }
     }
 
     var image_zoom_magnifier = function () {

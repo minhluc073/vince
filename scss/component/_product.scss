@@ -1,0 +1,187 @@
+// product single
+.flat-single-product{
+    padding: 27px 0px 100px;
+}
+
+
+
+.stagger-wrap {
+    .stagger-item {
+        transition: .3s ease-in-out;
+        transform: scale(.5) rotate(90deg) skew(15deg);
+        opacity: 0;
+        &.stagger-finished {
+            transform: scale(1) rotate(0deg) skew(0deg);
+            opacity: 1;
+        }
+    }
+}
+
+
+.slider-scroll,
+.thumbs-slider {
+    display: flex;
+    gap: 10px;
+}
+
+.tf-product-media-thumbs {
+    width: 122px;
+    flex-shrink: 0;
+    max-height: 758px;
+    .swiper-slide {
+        height: max-content;
+        width: auto;
+        .item {
+            position: relative;
+            height: 100%;
+            img {
+                border-radius: 8px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                border: 1px solid transparent;
+                @include transition3;
+                border-radius: 8px;
+            }
+        }
+        &:not(.swiper-slide-thumb-active){
+            .item{
+                opacity: 0.6;
+            }
+        }
+        &.swiper-slide-thumb-active {
+            .item {
+                &::after {
+                    border-color: rgba(0, 0, 0, 0.4);
+                }
+            }
+        }
+    }
+}
+
+.flat-wrap-media-product {
+    width: calc(100% - 132px);
+    position: relative;
+    .tf-product-media-main{
+        border-radius: 12px;
+        .item {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            max-height: 827px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+}
+
+.tf-product-info-list{
+    .tf-product-info-heading{
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+        .product-info-name{
+            margin-bottom: 12px;
+        }
+        .product-info-rate{
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            .list-star{
+                margin-right: 6px;
+                display: flex;
+                align-items: center;
+            }
+            .icon{
+                font-size: 16px;
+                color: #98AB23;
+                &:not(:last-child){
+                    margin-right: 5px;
+                }
+            }
+            .count-review{
+                font-family: $font-4;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 22.4px;
+                letter-spacing: -3%;
+                color: var(--text);
+            }
+        }
+        .product-info-price{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            .price-new{
+                color: var(--primary);
+            }
+            .price-old{
+                color: var(--rgba-dark);
+                text-decoration: line-through;
+            }
+        }
+        .badge-sale{
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            background-color: var(--primary);
+            border-radius: 22px;
+            padding: 5px 10px;
+            color: var(--white);
+        }
+        .product-info-sold{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 20px;
+            .icon{
+                animation: tf-ani-flash 2s infinite;
+            }
+        }
+        .product-info-progress-sale{
+            .title-hurry-up{
+                margin-bottom: 10px;
+                font-size: 12px;
+                line-height: 14.4px;
+                color: var(--dark);
+            }
+            .count{
+                font-size: 20px;
+                line-height: 24px;
+                font-weight: 500;
+                color: var(--primary);
+            }
+        }
+        .progress-sold{
+            width: 100%;
+            background-color: var(--line-4);
+            height: 5px;
+            position: relative;
+            border-radius: 5px;
+            .value{
+                position: relative;
+                height: 100%;
+                background-color: var(--primary);
+                transition: width 2s ease;
+                border-radius: 5px;
+            }
+        }
+
+    }
+}

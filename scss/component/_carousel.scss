@@ -1,0 +1,47 @@
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0px;
+}
+
+.sw-auto {
+    .swiper-wrapper{
+        align-items: center;
+    }
+    .swiper-slide {
+        width: auto;
+        transition-timing-function: linear;
+    }
+   
+}
+
+
+.nav-swiper{
+    background-color: var(--white);
+    border-radius: 999px;
+    @include transition3;
+    @include flex(center, center);
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--line);
+    color: var(--dark);
+    cursor: pointer;
+    &::after{
+        font-size: 12px;
+        color: var(--dark);
+        font-weight: 600;
+    }
+    &:hover{
+        background-color: var(--rgba-dark-2);
+        border-color: var(--rgba-dark-2);
+        &::after{
+            color: var(--white);
+        }
+    }
+    
+    &.swiper-button-disabled{
+        background-color: rgba(0, 0, 0, 0.4);
+        border-color: transparent;
+        cursor: text;
+    }
+    
+}

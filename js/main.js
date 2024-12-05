@@ -285,7 +285,18 @@
   };
 
 
-
+  /* Stagger Wrap
+  -------------------------------------------------------------------------*/
+  var staggerWrap = function () {
+    if ($(".stagger-wrap").length) {
+      var count = $(".stagger-item").length;
+      for (var i = 1, time = 0.2; i <= count; i++) {
+        $(".stagger-item:nth-child(" + i + ")")
+          .css("transition-delay", time * i + "s")
+          .addClass("stagger-finished");
+      }
+    }
+  };
 
 
   /* modal second
@@ -528,7 +539,28 @@
     });
   };
 
+    /* Handle Progress
+  ------------------------------------------------------------------------------------- */
+  var handleProgress = function () {
+    if ($(".progress-sold").length > 0) {
+      var progressValue = $(".progress-sold .value").data("progress");
+      setTimeout(function () {
+        $(".progress-sold .value").css("width", progressValue + "%");
+      }, 800);
+    }
 
+    // if ($(".modal-shopping-cart").length > 0) {
+    //   $('.modal-shopping-cart').on('hide.bs.modal', function () {
+    //     $(".tf-progress-bar .value").css("width", "0%");
+    //   });
+    //   $('.modal-shopping-cart').on('show.bs.modal', function () {
+    //     setTimeout(function () {
+    //       var progressValue = $(".tf-progress-bar .value").data("progress");
+    //       $(".tf-progress-bar .value").css("width", progressValue + "%");
+    //     }, 600);
+    //   });
+    // }
+  }
 
 
 
@@ -777,7 +809,7 @@
     // btn_wishlist();
     // btn_loading();
     // loadItem();
-    // stagger_wrap();
+    staggerWrap();
     // clickModalSecond();
     // scrollProgress();
     headerSticky();
@@ -802,7 +834,7 @@
     // hasPurchased();
     // checkPaymentCard();
     // handleFooter();
-    // handleProgress();
+    handleProgress();
     // heightModalmenu();
     // scrollQuickView();
     // hoverVideo();

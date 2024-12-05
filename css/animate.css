@@ -2778,3 +2778,15 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes tf-ani-flash {
+  50%,
+  from,
+  to {
+      opacity: 1;
+  }
+  25%,
+  75% {
+      opacity: 0;
+  }
+}

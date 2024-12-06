@@ -823,7 +823,7 @@
     // customInput();
     // chooseOption();
     // withDiscount();
-    // totalPriceVariant();
+    totalPriceVariant();
     // variantPicker();
     // scrollGridProduct();
     // hoverPin();

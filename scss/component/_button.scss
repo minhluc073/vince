@@ -1,22 +1,76 @@
-
-
-
-
-.btn-fill{
-  background-color: var(--dark);
-  color: var(--white);
-  &:hover{
-    background-color: var(--primary);
+.tf-btn{
+  @include transition3;
+    background-color: var(--dark);
+    border: 1px solid var(--dark);
     color: var(--white);
-  }
+    padding: 13px 32px;
+    border-radius: 99px;
+    @include flex(center, center);
+    gap: 10px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    text-transform: capitalize;
+    .icon{
+      font-size: 16px;
+    }
+    &.hover-icon{
+      &:hover{
+        .icon{
+          animation: 0.3s link-icon linear;
+        }
+      }
+      
+    }
+    &.btn-primary{
+      background-color: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+    &.btn-fill{
+      background-color: var(--dark);
+      color: var(--white);
+    
+    }
+    &.btn-white{
+      color: var(--dark);
+      background-color: var(--white);
+      border-color: var(--white);
+      &:hover{
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+    }
+    &.btn-line-white{
+      background-color: transparent;
+      border-color: var(--white);
+      color: var(--white);
+      &:hover{
+        color: var(--primary);
+        border-color: var(--primary);
+      }
+    }
+    &.hover-primary{
+      &:hover{
+        background-color: var(--primary);
+        color: var(--white);
+        border-color: var(--primary);
+      }
+      
+    }
 }
+
+
+
+
+
 
 .animate-btn {
     position: relative;
     overflow: hidden;
     &:hover{
         &::after{
-            animation: shine-forward .5s forwards;
+            animation: shine-forward 1s forwards;
         }
     }
 }
@@ -34,10 +88,11 @@
     top: 0;
     left: -100%;
     opacity: 0.6;
-    animation: shine-reverse .5s forwards;
+    animation: shine-reverse 1s forwards;
 
 }
-.animate-btn.btn-fill::after {
+.animate-btn.btn-fill::after,
+.animate-btn.tf-btn::after {
     background-image: linear-gradient(
     120deg,
     rgba(0, 0, 0, 0) 20%,

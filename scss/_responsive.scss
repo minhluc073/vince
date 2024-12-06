@@ -152,6 +152,9 @@
                 margin-bottom: 24px;
             }
         }
+        .tf-product-info-extra-link{
+            gap: 42px;
+        }
 
     }
 
@@ -335,6 +338,11 @@
         width: 40px;
         height: 40px;
     }
+    .tf-btn{
+        padding: 10px 24px;
+        gap: 8px;
+    }
+
 }
 
 @media (max-width: 767px) {

@@ -126,7 +126,7 @@ body {
     font-weight: 400;
     background-color: var(--white);
     font-style: normal;
-    color: var(--text);
+    color: var(--dark);
 }
 
 img {
@@ -270,14 +270,15 @@ textarea {
 button{
     @include transition3;
     background-color: var(--dark);
+    border: 1px solid var(--dark);
     color: var(--white);
-    padding: 15px 32px;
+    padding: 13px 32px;
     border-radius: 99px;
-    @include flex(center, space-between);
+    @include flex(center, center);
     gap: 8px;
     font-size: 16px;
-    line-height: 26px;
-    font-weight: 600;
+    line-height: 24px;
+    font-weight: 500;
     text-transform: capitalize;
     .icon {
         font-size: 22px;
@@ -286,6 +287,12 @@ button{
         background-color: transparent;
         color: var(--dark);
     } 
+   
+}
+button:focus-within,
+button:focus-visible,
+button:focus{
+    outline: none;
 }
 
 
@@ -432,6 +439,9 @@ video {
 .text-dark{
     color: var(--dark) !important;
 }
+.text-dark-2{
+    color: var(--dark-2) !important;
+}
 .text-white{
     color: var(--white) !important;
 }
@@ -486,8 +496,14 @@ video {
 .bg-dark-2{
     background-color: #313030 !important;
 }
+.bg-dark-3{
+    background-color: #292929 !important;
+}
 .bg-grey{
     background-color: #ACACAC !important;
+}
+.bg-grey-2{
+    background-color: #F2F4F7 !important;
 } 
 .bg-white{
     background-color: var(--white) !important;
@@ -528,6 +544,9 @@ video {
 }
 .bg-brown{
     background-color: #7E6449 !important;
+}
+.bg-yellow{
+    background-color: #B7992E !important
 }
 
 

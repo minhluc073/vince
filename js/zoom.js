@@ -39,78 +39,59 @@ if ($(".thumbs-slider").length > 0) {
       },
     });
 
-    // color
-    function updateActiveColorButton(activeIndex) {
-        $(".color-btn").removeClass("active");
+    function updateActiveButton(type, activeIndex) {
+        var btnClass = `.${type}-btn`;
+        var dataAttr = `data-${type}`;
+        var currentClass = `.value-current${capitalizeFirstLetter(type)}`;
+        var selectClass = `.select-current${capitalizeFirstLetter(type)}`;
+        $(btnClass).removeClass("active");
     
         var currentSlide = $(".tf-product-media-main .swiper-slide").eq(activeIndex);
-        var currentColor = currentSlide.data("color");
-        if (currentColor) {
-          $(".color-btn[data-color='" + currentColor + "']").addClass("active");
-          $('.value-currentColor').text(currentColor);
-          $(".select-currentColor").text(currentColor);
+        var currentValue = currentSlide.attr(dataAttr);
+    
+        if (currentValue) {
+            $(`${btnClass}[${dataAttr}='${currentValue}']`).addClass("active");
+            $(currentClass).text(currentValue);
+            $(selectClass).text(currentValue);
+        } else {
+            // $(currentClass).text("");
+            // $(selectClass).text("");
         }
     }
-    main.on('slideChange', function () {
-        updateActiveColorButton(this.activeIndex);
-    });
-
-    // Function scroll to the correct slide and thumb
-    function scrollToColor(color) {
-    var matchingSlides = $(".tf-product-media-main .swiper-slide").filter(function() {
-        return $(this).data("color") === color;
-    });
-    if (matchingSlides.length > 0) {
-        var firstIndex = matchingSlides.first().index();
-        main.slideTo(firstIndex,1000,false);
-        thumbs.slideTo(firstIndex,1000,false);
-    }
-    }
-    $(".color-btn").on("click", function() {
-    var color = $(this).data("color");
     
-    $(".color-btn").removeClass("active");
-    $(this).addClass("active");
-
-    scrollToColor(color);
-    });
-    updateActiveColorButton(main.activeIndex);
-
-    // material
-    function updateActiveOtherVariantBtn(activeIndex) {
-        $(".other-variant-btn").removeClass("active");
+    function scrollTo(type, value) {
+        if (!value) return; 
+        var matchingSlides = $(".tf-product-media-main .swiper-slide").filter(function () {
+            return $(this).attr(`data-${type}`) === value;
+        });
     
-        var currentSlide = $(".tf-product-media-main .swiper-slide").eq(activeIndex);
-        var currentOtherVariant = currentSlide.data("other-variant");
-        if (currentOtherVariant) {
-          $(".other-variant-btn[data-other-variant='" + currentOtherVariant + "']").addClass("active");
-          $('.value-currentVariant').text(currentOtherVariant);
-          $(".select-currentVariant").text(currentOtherVariant);
+        if (matchingSlides.length > 0) {
+            var firstIndex = matchingSlides.first().index();
+            main.slideTo(firstIndex, 1000, false);
+            thumbs.slideTo(firstIndex, 1000, false);
         }
     }
-    main.on('slideChange', function () {
-        updateActiveOtherVariantBtn(this.activeIndex);
-    });
-
-    // Function scroll to the correct slide and thumb
-    function scrollToOtherVariant(otherVariant) {
-    var matchingSlides = $(".tf-product-media-main .swiper-slide").filter(function() {
-        return $(this).data("other-variant") === otherVariant;
-    });
-    if (matchingSlides.length > 0) {
-        var firstIndex = matchingSlides.first().index();
-        main.slideTo(firstIndex,1000,false);
-        thumbs.slideTo(firstIndex,1000,false);
-        }
-    }
-    $(".other-variant-btn").on("click", function() {
-    var otherVariant = $(this).data("other-variant");
     
-    $(".other-variant-btn").removeClass("active");
-    $(this).addClass("active");
-    scrollToOtherVariant(otherVariant);
+    function setupVariantButtons(type) {
+        $(`.${type}-btn`).on("click", function () {
+            var value = $(this).data(type);
+            $(`.${type}-btn`).removeClass("active");
+            $(this).addClass("active");
+            scrollTo(type, value);
+        });
+    }
+    
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    ["color", "size"].forEach((type) => {
+        main.on("slideChange", function () {
+            updateActiveButton(type, this.activeIndex);
+        });
+        setupVariantButtons(type);
+        updateActiveButton(type, main.activeIndex);
     });
-    updateActiveOtherVariantBtn(main.activeIndex);
+    
 
 }
 

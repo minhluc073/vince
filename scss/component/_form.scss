@@ -1,3 +1,73 @@
+.tf-check {
+    position: relative;
+    background: transparent;
+    cursor: pointer;
+    outline: 0;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    border: 1px solid var(--rgba-dark-3);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    &:checked {
+        border-color: var(--primary);
+        background-color: var(--primary);
+        &::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    &::before {
+        font-weight: 500;
+        font-family: $fontIcon;
+        content: "\e92c";
+        position: absolute;
+        color: var(--white);
+        opacity: 0;
+        font-size: 8px;
+        transform: scale(0);
+        @include transition3;
+    }
+}
+
+.tf-select {
+    position: relative;
+    select {
+        width: 100%;
+        padding: 9px 24px 9px 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: transparent;
+        @include transition3;
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--text);
+    }
+    &::after {
+        font-family: $fontIcon;
+        position: absolute;
+        content: "\e95a";
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 10px;
+        z-index: -1;
+    }
+    &:hover{
+        select{
+            border-color: var(--main);
+        }
+    }
+}
+
+
+
+
 
 
 .form-search {

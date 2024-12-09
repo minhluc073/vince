@@ -50,6 +50,16 @@
         border-color: var(--primary);
       }
     }
+    &.btn-line{
+      background-color: transparent;
+      border-color: var(--primary);
+      color: var(--primary);
+      &:hover{
+        background-color: var(--primary);
+        color: var(--white);
+        border-color: var(--primary);
+      }
+    }
     &.hover-primary{
       &:hover{
         background-color: var(--primary);

@@ -158,6 +158,13 @@
 
     }
 
+    .tf-product-frequently-bought-together{
+        padding: 32px;
+        .tf-btn{
+            padding: 16px 32px;
+        }
+    }
+
    
 }
 
@@ -322,7 +329,17 @@
         font-size: 24px;
         line-height: 32px;
     }
-
+    .tf-product-info-list{
+        .tf-product-info-delivery-return{
+            display: block;
+            .product-delivery:not(:last-child){
+                padding-bottom: 25px;
+                margin-bottom: 25px;
+                border-right: 0;
+                border-bottom: 1px solid var(--line);
+            }
+        }
+    }
 
 }
 
@@ -341,6 +358,18 @@
     .tf-btn{
         padding: 10px 24px;
         gap: 8px;
+    }
+    .tf-product-info-list {
+        .tf-product-info-extra-link{
+            gap: 15px;
+        }
+    }
+    .tf-bundle-product-item{
+        gap: 15px;
+        .bundle-image{
+            width: 100px;
+            min-width: 100px;
+        }
     }
 
 }
@@ -441,6 +470,23 @@
     }
     .flat-single-product{
         padding: 27px 0px 60px;
+    }
+
+    .tf-product-info-wrap{
+        margin-top: 40px;
+    }
+    .tf-product-frequently-bought-together {
+        padding: 15px;
+        .bundle-total-submit{
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
+    .tf-bundle-product-item{
+        .bundle-image{
+            width: 80px;
+            min-width: 80px;
+        }
     }
     
 }

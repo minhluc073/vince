@@ -253,6 +253,9 @@ textarea {
     height: 160px;
     resize: none;
 }
+select{
+    outline: 0;
+}
 /* Placeholder color */
 ::-webkit-input-placeholder {
     color: var(--text-3);
@@ -520,6 +523,9 @@ video {
 .bg-light-pink{
     background-color: #FF6969 !important;
 }
+.bg-light-pink-2{
+    background-color: #D47B62 !important;
+}
 
 .bg-light-green{
     background-color: #7C8C47 !important;
@@ -536,9 +542,7 @@ video {
 .bg-light-purple-2{
     background-color: #A95354 !important;
 }
-.bg-light-orange{
-    background-color: #D47B62 !important;
-}
+
 .bg-light-blue{
     background-color: #5192F4 !important;
 }

@@ -757,6 +757,16 @@
 
   }
   
+
+  /* item checkbox
+  -------------------------------------------------------------------------*/
+  var itemCheckbox = function () {
+    if ($(".item-has-checkbox").length) {
+      $(".item-has-checkbox input:checkbox").on("click", function (e) {
+        $(this).closest(".item-has-checkbox").toggleClass("check");
+      });
+    }
+  };
   
 
 
@@ -824,6 +834,7 @@
     // chooseOption();
     // withDiscount();
     totalPriceVariant();
+    itemCheckbox();
     // variantPicker();
     // scrollGridProduct();
     // hoverPin();

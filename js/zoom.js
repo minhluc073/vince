@@ -39,6 +39,20 @@ if ($(".thumbs-slider").length > 0) {
       },
     });
 
+    const modelViewer = document.querySelector('.slide-3d');
+
+    if (modelViewer){
+        modelViewer.addEventListener('mouseenter', () => {
+            main.allowTouchMove = false; 
+        });
+        
+        modelViewer.addEventListener('mouseleave', () => {
+            main.allowTouchMove = true; 
+        });
+    }
+
+
+
     function updateActiveButton(type, activeIndex) {
         var btnClass = `.${type}-btn`;
         var dataAttr = `data-${type}`;
@@ -202,20 +216,27 @@ if ($(".thumbs-slider").length > 0) {
     }
 
     var model_viewer = function () {
-
         if ($(".tf-model-viewer").length) {
-   
             $(".tf-model-viewer-ui-button").on("click", function (e) {
                 $(this).closest(".tf-model-viewer").find("model-viewer").removeClass("disabled");
                 $(this).closest(".tf-model-viewer").toggleClass("active");
             });
+    
             $(".tf-model-viewer-ui").on("dblclick", function (e) {
+                const modelViewer = $(this).closest(".tf-model-viewer").find("model-viewer")[0];
+                
                 $(this).closest(".tf-model-viewer").find("model-viewer").addClass("disabled");
                 $(this).closest(".tf-model-viewer").toggleClass("active");
+                
+                if (modelViewer) {
+                    modelViewer.cameraOrbit = "0deg 90deg auto"; 
+                    // modelViewer.fieldOfView = "45deg"; 
+                    modelViewer.updateFraming(); 
+                }
             });
         }
-
-    }
+    };
+    
 
   // Dom Ready
   $(function () {
